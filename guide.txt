@@ -1,0 +1,10 @@
+Handling file upload in Flask is very easy. It needs an HTML form with its enctype attribute set
+ to ‘multipart/form-data’, posting 
+the file to a URL. The URL handler fetches file from request.files[] object and saves it to the desired location.
+
+Each uploaded file is first saved in a temporary location on the server, before it is actually saved to its ultimate 
+location. Name of destination file can be hard-coded or can be obtained from filename property of request.files[file] 
+object. However, it is recommended to obtain a secure version of it using the secure_filename() function.
+
+It is possible to define the path of default upload folder and maximum size of uploaded file in configuration settings
+ of Flask object.
